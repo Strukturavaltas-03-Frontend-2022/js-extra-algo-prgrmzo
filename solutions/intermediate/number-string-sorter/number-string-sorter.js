@@ -1,18 +1,25 @@
-function numberAndStringSorter(arr) {
-  let nums = [];
-  let strs = [];
+// - `number-string-sorter` mappa:
+//   Írj egy függvényt, amely paraméterként egy olyan tömböt kap,
+//    amely azonos darabú egész számot és string-et tartalmaz véletlenszerű sorrendben!
+//   Rendezd úgy a tömböt, hogy minden szám után egy string következzen!
+//   Add vissza a tömböt!
+
+const numberAndStringSorter = (arr) => {
+  let numArr = [];
+  let strArr = [];
+  let mixedArr = [];
+
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === "number") {
-      nums.push(arr[i]);
-    } else if (arr[i] === "string") {
-      strs.push(arr[i]);
+    if (typeof arr[i] === "number") {
+      numArr.push(arr[i]);
+    } else {
+      strArr.push(arr[i]);
     }
   }
-  let newArray = [];
-  for (let j = 0; j < nums.length; j++) {
-    newArray.push(nums[j], strs[j]);
+  for (let i = 0; i < numArr.length; i++) {
+    mixedArr.push(numArr[i], strArr[i]);
   }
-  return newArray;
-}
+  return mixedArr;
+};
 
 export default numberAndStringSorter;
